@@ -4,6 +4,8 @@ import Gameshop from './components/Gameshop';
 import MyFav from './components/MyFav';
 import Home from './pages/Home';
 import MyGames from './pages/MyGames';
+import GameDetails from './components/GameDetails';
+import MainLayout from './components/MainLayout';
 
 function App() {
   return (
