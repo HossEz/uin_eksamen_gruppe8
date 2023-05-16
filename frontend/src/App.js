@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import './styles/css/main.css';
-import Gameshop from './components/Gameshop';
-import MyFav from './components/MyFav';
 import Home from './pages/Home';
 import MyGames from './pages/MyGames';
-import GameDetails from './components/GameDetails';
+import MyFav from './pages/MyFav';
+import Gameshop from './pages/Gameshop';
 import MainLayout from './components/MainLayout';
+import GameDetails from './components/GameDetails';
+
 
 function App() {
   return (
