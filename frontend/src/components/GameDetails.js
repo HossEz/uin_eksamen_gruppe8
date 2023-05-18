@@ -18,7 +18,7 @@ export default function GameDetails() {
       }
       
       const response = await fetch(
-        `https://api.rawg.io/api/games/${slug}?key=${apiKey}`
+        `https://api.rawg.io/api/games/${slug}?key=${apiKey}` // Vi brukte første ApiId, men endret til slug
       );
       const data = await response.json();
       
@@ -30,7 +30,7 @@ export default function GameDetails() {
     fetchGameDetails();
   }, [slug]);
 
-  const goBack = () => {
+  const goBack = () => { // For å navigere tilbake til siden du opprinnelig var på
     navigate(-1);
   };
 
