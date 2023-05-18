@@ -53,24 +53,10 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link to="/registrer">
             <button className={`btn ${menuOpen ? 'btn4' : ''}`}>Registrer</button>
-          </Link>
         </li>
-                    {/* <>
-            <li>
-              <button className="btn">
-                Logg ut
-              </button>
-            </li>
-            <Link to="/min-profil">
-              <img src='https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg' className='profilePic' alt='Profile'></img>
-            </Link>
-            </> */}
         <li>
-          <Link to="/logg-inn">
             <button className={`btn2 ${menuOpen ? 'btn4' : ''}`}>Logg inn</button>
-          </Link>
         </li>
       </ul>
     </nav>

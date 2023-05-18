@@ -17,37 +17,37 @@ export default function Games() {
         headers: {},
       };
 
-      // Include Last-Modified header if available
+      // Inkluderer "Last-Modified" header hvis tilgjengelig
       if (lastModified) {
         requestOptions.headers['If-Modified-Since'] = lastModified;
       }
 
-      // Include ETag header if available
+      // Inkluderer ETag header hvis tilgjengelig
       if (etag) {
         requestOptions.headers['If-None-Match'] = etag;
       }
 
       const response = await fetch(
-        `https://api.rawg.io/api/games?key=${apiKey}&ordering=-popular&page=${currentPage}&page_size=12`,
+        `https://api.rawg.io/api/games?key=${apiKey}&ordering=-popular&page=${currentPage}&page_size=12`, //I stedet for å hente de nyeste spillene (-released), så hentet vi de mest populære spillene (-popular). Nesten alle av de nyeste (-released) spillene hadde ikke bilde, eller var ikke engang et spill.
         requestOptions
       );
 
       if (response.status === 304) {
-        // Content not modified, use cached games
+        // Hvis innholdet ikke er endret, bruk cached (localStorage) spill
         const cachedGames = localStorage.getItem('games');
         if (cachedGames) {
           setGames(JSON.parse(cachedGames));
           setLoading(false);
         }
       } else if (response.ok) {
-        // Content modified, update games and cache
+        // Hvis innholdet blir endret, oppdater spill og localStorage(cache)
         const data = await response.json();
         const fetchedGames = data.results;
 
         setGames(fetchedGames);
         localStorage.setItem('games', JSON.stringify(fetchedGames));
 
-        // Store Last-Modified and ETag headers for future requests
+        // Lagre "Last-Modified" og ETag headers for fremtidige forespørsler
         const newLastModified = response.headers.get('Last-Modified');
         const newETag = response.headers.get('ETag');
         setLastModified(newLastModified);

@@ -38,6 +38,7 @@ export default function Gameshop({ numShowcaseGames, isHomePage }) {
             </Link>
             <p>
               <b>Rating:</b> {game.rating}{" "}
+              {/* Svg fra: https://fontawesomeicons.com/svg/icons */}
               <svg
                 style={{ marginBottom: -1 }}
                 xmlns="http://www.w3.org/2000/svg"

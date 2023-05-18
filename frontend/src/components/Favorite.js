@@ -7,18 +7,16 @@ export default function Favorites({ game }) {
   const toggleFavorite = useCallback(async () => {
     const updatedFavorite = !isFavorite;
 
-    // Update the favorite status in the component immediately
     setIsFavorite(updatedFavorite);
 
-    // Update the favorite status in local storage
+    // Oppdaterer favoritt i localStorage
     localStorage.setItem(game._id, updatedFavorite.toString());
 
-    // Update the favorite status in Sanity
+    // Oppdaterer favoritt i Sanity
     await writeClient.patch(game._id).set({ favoritt: updatedFavorite }).commit();
   }, [game._id, isFavorite]);
 
   useEffect(() => {
-    // Check local storage for the favorite status on component mount
     const storedFavorite = localStorage.getItem(game._id);
     if (storedFavorite !== null) {
       setIsFavorite(storedFavorite === 'true');
@@ -27,6 +25,7 @@ export default function Favorites({ game }) {
 
   return (
     <div className="favorite-icon" onClick={toggleFavorite}>
+      {/* SVG fra https://fontawesomeicons.com/svg/icons */}
       <svg
         viewBox="0 0 24 24"
         fill={isFavorite ? 'red' : '#272727'}

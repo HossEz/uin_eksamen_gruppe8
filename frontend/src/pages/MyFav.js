@@ -15,7 +15,7 @@ export default function MyFav({ isHomePage }) {
   }
 
   if (favoriteGames.length === 0 && isHomePage) {
-    return null; // Return null to hide the whole aside element
+    return null;
   }
   
   return (

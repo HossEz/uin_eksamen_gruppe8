@@ -42,7 +42,7 @@ body {
             transition: 0.4s;
           }
         }
-    
+        // Hamburger-meny inspirasjon fra: https://www.youtube.com/watch?v=gAGcjlJyKk0&t=297s
         &.open {
           .bar:nth-child(1) {
             transform: rotate(-45deg) translate(-5.5px, 7.5px);
@@ -171,16 +171,7 @@ body {
         ul li a:hover::before {
             width: 100%;
         }
-        // .profilePic {
-        //     width: 50px;
-        //     border-radius: 50%;
-        //     margin-left: 1.9rem;
-        //     border: #4b1aa0 3px solid;
-        //     transition: scale 0.3s ease-in-out;
-        // }
-        // .profilePic:hover {
-        //     scale: 107%;
-        // }
+
     }
     .btn {
         font-size: 18px;

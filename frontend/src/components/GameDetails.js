@@ -10,7 +10,7 @@ export default function GameDetails() {
     const fetchGameDetails = async () => {
       const apiKey = '3bfd04e4e7a04078b214294009cd610c';
       
-      // Check if the game details are already cached
+      // Sjekker om spilldetaljene allerede er cached
       const cachedGameDetails = localStorage.getItem(slug);
       if (cachedGameDetails) {
         setGameDetails(JSON.parse(cachedGameDetails));
@@ -22,7 +22,7 @@ export default function GameDetails() {
       );
       const data = await response.json();
       
-      // Cache the game details in local storage
+      // Setter spilldetaljene i localStorage
       localStorage.setItem(slug, JSON.stringify(data));
       setGameDetails(data); 
     };

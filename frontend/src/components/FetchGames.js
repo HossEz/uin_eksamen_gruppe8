@@ -39,7 +39,7 @@ export default function FetchGames({ fetchFavorites }) {
             const cachedGame = localStorage.getItem(cacheKey);
 
             if (cachedGame) {
-              return JSON.parse(cachedGame); // Returner cacheverdien hvis tilgjengelig
+              return JSON.parse(cachedGame); 
             }
 
             // Hent spilldetaljer fra APIen 
